@@ -10,13 +10,13 @@ public class Menjacnica implements MenjacnicaInterfejs {
 	private LinkedList<Valuta> valute = new LinkedList<>();
 
 	@Override
-	public void dodajKurs(GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+	public void dodajKurs(Valuta v) {
+		valute.add(v);
 
 	}
 
 	@Override
-	public void obrisiKurs(GregorianCalendar datum) {
+	public void obrisiKurs(Valuta v) {
 		// TODO Auto-generated method stub
 
 	}

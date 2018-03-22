@@ -5,8 +5,8 @@ import menjacnica.Valuta;
 
 public interface MenjacnicaInterfejs {
 	
-	public void dodajKurs(GregorianCalendar datum);
-	public void obrisiKurs(GregorianCalendar datum);
+	public void dodajKurs(Valuta v);
+	public void obrisiKurs(Valuta v);
 	public Valuta pronadjiKurs(GregorianCalendar datum, String naziv);
 	
 
