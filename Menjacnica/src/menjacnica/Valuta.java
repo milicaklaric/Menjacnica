@@ -14,31 +14,46 @@ public class Valuta {
 	public String getNaziv() {
 		return naziv;
 	}
-	public void setNaziv(String naziv) {
+	public void setNaziv(String naziv) throws Exception {
+		if (naziv == null)
+			throw new Exception("Naziv ne moze biti null");
+		
 		this.naziv = naziv;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
-	public void setDatum(GregorianCalendar datum) {
+	public void setDatum(GregorianCalendar datum) throws Exception {
+		if (datum == null)
+			throw new Exception("Datum ne moze biti null");
+		
 		this.datum = datum;
 	}
 	public double getProdajni() {
 		return prodajni;
 	}
-	public void setProdajni(double prodajni) {
+	public void setProdajni(double prodajni) throws Exception {
+		if (prodajni < 0)
+			throw new Exception("Kurs ne moze biti manji od nule");
+		
 		this.prodajni = prodajni;
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
-	public void setKupovni(double kupovni) {
+	public void setKupovni(double kupovni) throws Exception {
+		if (kupovni < 0)
+			throw new Exception("Kurs ne moze biti manji od nule");
+		
 		this.kupovni = kupovni;
 	}
 	public double getSrednji() {
 		return srednji;
 	}
-	public void setSrednji(double srednji) {
+	public void setSrednji(double srednji) throws Exception {
+		if (srednji < 0)
+			throw new Exception("Kurs ne moze biti manji od nule");
+		
 		this.srednji = srednji;
 	}
 	
@@ -91,8 +106,10 @@ public class Valuta {
 	
 	@Override
 	public String toString() {
-		return "Naziv valute: " + naziv + "; datum:" + datum + '\n' + '\t' +", prodajni =" + prodajni + ", kupovni =" + kupovni
-				+ ", srednji =" + srednji;
+		return "Naziv valute: " + naziv + "; datum:" + datum.get(GregorianCalendar.DAY_OF_MONTH) + "." 
+				+ datum.get(GregorianCalendar.MONTH)+ "." 
+				+ datum.get(GregorianCalendar.YEAR) + "."
+				+  '\n' + '\t' +", prodajni =" + prodajni + ", kupovni =" + kupovni+ ", srednji =" + srednji;
 	}
 	
 	
